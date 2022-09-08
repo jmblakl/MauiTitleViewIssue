@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2"
+     xmlns:resourceHelpers="clr-namespace:MauiApp2.Resources.ResourceHelpers"
+    Shell.FlyoutBehavior="Disabled">
+    <Shell.TitleView>
+        <Image Source="dotnet_bot"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"/>
+    </Shell.TitleView>
+
+    <TabBar Route="Home">
+        <Tab>
+            
+            <Tab.Icon>
+                <FontImageSource FontFamily="IconFontTypes"
+                                 Glyph="{x:Static resourceHelpers:IconFontHelper.ClipboardTextClockOutline}" Color="Green"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
+                          Route="SecondPage"/>
+        </Tab>
+
+        <Tab>
+            <Tab.Icon>
+                <FontImageSource FontFamily="IconFontTypes"
+                                 Glyph="{x:Static resourceHelpers:IconFontHelper.TimelineTextOutline}" Color="Green"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"
+                          Route="HomePage"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
