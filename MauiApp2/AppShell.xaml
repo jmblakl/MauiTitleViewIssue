@@ -7,22 +7,21 @@
      xmlns:resourceHelpers="clr-namespace:MauiApp2.Resources.ResourceHelpers"
     Shell.FlyoutBehavior="Disabled">
     <Shell.TitleView>
-        <Image Source="dotnet_bot"
+    
+            <Image Source="dotnet_bot"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="CenterAndExpand"/>
-    </Shell.TitleView>
+
+        <!--If you uncommment this, and comment the image above the issue appears to go away-->
+        <!--<Grid>
+            <Image Source="dotnet_bot"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand"/>
+        </Grid>-->
+        </Shell.TitleView>
 
     <TabBar Route="Home">
-        <Tab>
-            
-            <Tab.Icon>
-                <FontImageSource FontFamily="IconFontTypes"
-                                 Glyph="{x:Static resourceHelpers:IconFontHelper.ClipboardTextClockOutline}" Color="Green"/>
-            </Tab.Icon>
-            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" 
-                          Route="SecondPage"/>
-        </Tab>
-
+    
         <Tab>
             <Tab.Icon>
                 <FontImageSource FontFamily="IconFontTypes"

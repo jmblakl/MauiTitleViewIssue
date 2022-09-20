@@ -17,10 +17,12 @@ public static class MauiProgram
             })
             .UseMauiCommunityToolkit();
 
-		builder.Services.AddSingleton<MainPage>();
-		builder.Services.AddSingleton<MainPageModel>();
-		builder.Services.AddSingleton<Child>();
-		builder.Services.AddSingleton<ChildModel>();
+
+		//all ViewModels and Pages are registered as transient
+		builder.Services.AddTransient<MainPage>();
+		builder.Services.AddTransient<MainPageModel>();
+		builder.Services.AddTransient<Child>();
+		builder.Services.AddTransient<ChildModel>();
 		return builder.Build();
 	}
 }
